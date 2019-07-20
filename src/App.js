@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import Home from './components/Home'
+// import News from './components/News'
+
+import FormRef from './components/FormRef' //form 表单事件 和ref 05react
+
+import TodoList from './components/TodoList'
+
+import ReactForm from './components/ReactForm'
+class App extends Component {
+
+  render(){
+    return (
+      <div >
+        我是跟组件
+        {/* <News /> */}
+
+        <FormRef />
+        <hr></hr>
+        {/* <TodoList /> */}
+
+        <ReactForm />
+      </div>
+    )
+  }
 }
 
 export default App;
