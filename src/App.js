@@ -9,6 +9,8 @@ import Vmode from './components/Vmode'
 import TodoList from './components/TodoList'
 
 import ReactForm from './components/ReactForm'
+
+import Parent from './components/Parent' // 测试父子组件通信
 class App extends Component {
 
   render(){
@@ -24,6 +26,9 @@ class App extends Component {
         <ReactForm />
         <hr />
         <TodoList />
+        <hr />
+        <h1>测试组件通信</h1>
+        <Parent />
       </div>
     )
   }

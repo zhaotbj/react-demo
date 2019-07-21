@@ -64,7 +64,7 @@ class TodoList extends Component {
          })
        }
        </ul>
-       <hr />
+       <br />
    
       已经完成：<ul>
       {
@@ -76,7 +76,7 @@ class TodoList extends Component {
        }
       </ul>
       
-      <hr />
+      <br />
 
       </div>
     );

@@ -21,19 +21,19 @@ class News extends Component{
     })
     return (
       <div className="news">
-        {this.state.msg}
-        <hr/>
+        <h1>{this.state.msg}</h1>
+        <br/>
         <img src={img} alt=""></img>
         <img src={require('../assets/images/5c048b414a918.jpg')} alt=""></img>
         <img src={require('../assets/images/5c048b414a918.jpg')} alt=""></img>
         <img src="https://tse1-mm.cn.bing.net/th?id=OET.782bd77cf1424a359e31d0015d2ee001&w=272&h=272&c=7&rs=1&o=5&pid=1.9" alt=""></img>
 
-        <hr/>
+        <br/>
 
-        {this.state.list1}
-        <hr/>
+        {/* {this.state.list1} */}
+        <br/>
         {result}
-        <hr/>
+        <br/>
       <ul>
         {
           this.state.list2.map((item,index)=>{

@@ -28,11 +28,11 @@ class FormRef extends Component{
   render(){
     return (
       <div>
-        {this.state.msg}
+        <h1>{this.state.msg}</h1>
 
-        <hr></hr>
+        <br/>
         <input ref="user" onChange={this.inputChange} /> <button onClick={this.getValue}>获取表单输入的值</button>
-        <hr></hr>
+        <br/>
         <input onKeyUp={this.inputkeyUP} /> <button onClick={this.getValue}>测试键盘</button>
       </div>
     )
