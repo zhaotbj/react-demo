@@ -1,35 +1,83 @@
 import React, { Component } from 'react';
+import '../assets/index.css'
+import storage from '../module/storage'
 class TodoList extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      username:'张三'
+      list:[]
      }
   }
 
-  changeValue=(e)=>{
-    this.setState({
-      username:e.target.value
-    })
+  handleKeyUp=(e)=>{
+    if(e.keyCode===13) {
+      let restList=this.state.list
+      restList.push({
+        title:this.refs.inputText.value,
+        checked:false
+      })
+      this.setState({
+        list:restList
+      })
+      this.refs.inputText.value=''
+
+      storage.set('todoList',restList)
+    }
   }
-  handleClick=(e)=>{
+  handleChange=(index)=>{
+    let list=this.state.list
+    list[index].checked=!list[index].checked
     this.setState({
-      username:'王五'
+      list:list
     })
+    storage.set('todoList',list)
+  }
+  handleDelete=(index)=>{
+    let list=this.state.list
+    list.splice(index,1)
+    this.setState({
+      list:list
+    })
+    storage.set('todoList',list)
+  }
+  componentDidMount(){
+    let result=storage.get('todoList')
+    if(result){
+      this.setState({
+        list:result
+      })
+    }
+   
+    
   }
   render() { 
     return (
       <div>
-        我是TodoList组件
-      <p>双向数据绑定</p>
+        <h1>我是TodoList组件</h1>
+        <header className="header">todoList：<input ref="inputText" onKeyUp={this.handleKeyUp}/></header>
+       正在进行：<ul>
+       {
+         this.state.list.map((item,index)=>{
+           if(!item.checked){
+            return <li key={index}><input type="checkbox" checked={item.checked} onChange={this.handleChange.bind(this,index)} />{item.title}---<button onClick={this.handleDelete.bind(this,index)}>删除</button></li>
+           }
+         })
+       }
+       </ul>
+       <hr />
+   
+      已经完成：<ul>
+      {
+         this.state.list.map((item,index)=>{
+           if(item.checked){
+            return <li key={index}><input type="checkbox" checked={item.checked} onChange={this.handleChange.bind(this,index)} />{item.title}---<button onClick={this.handleDelete.bind(this,index)}>删除</button></li>
+           }
+         })
+       }
+      </ul>
+      
+      <hr />
 
-      <input value={this.state.username} onChange={this.changeValue}/>
-      <button onClick={this.handleClick}>改变值</button>
-      <br></br>
-      {this.state.username}
-
-      <br/>
-      <input defaultValue={this.state.username}/>
       </div>
     );
   }

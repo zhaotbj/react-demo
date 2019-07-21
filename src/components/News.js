@@ -23,10 +23,10 @@ class News extends Component{
       <div className="news">
         {this.state.msg}
         <hr/>
-        <img src={img}></img>
-        <img src={require('../assets/images/5c048b414a918.jpg')}></img>
-        <img src={require('../assets/images/5c048b414a918.jpg')}></img>
-        <img src="https://tse1-mm.cn.bing.net/th?id=OET.782bd77cf1424a359e31d0015d2ee001&w=272&h=272&c=7&rs=1&o=5&pid=1.9"></img>
+        <img src={img} alt=""></img>
+        <img src={require('../assets/images/5c048b414a918.jpg')} alt=""></img>
+        <img src={require('../assets/images/5c048b414a918.jpg')} alt=""></img>
+        <img src="https://tse1-mm.cn.bing.net/th?id=OET.782bd77cf1424a359e31d0015d2ee001&w=272&h=272&c=7&rs=1&o=5&pid=1.9" alt=""></img>
 
         <hr/>
 

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 // import Home from './components/Home'
-// import News from './components/News'
+import News from './components/News'
 
 import FormRef from './components/FormRef' //form 表单事件 和ref 05react
 
+import Vmode from './components/Vmode'
 import TodoList from './components/TodoList'
 
 import ReactForm from './components/ReactForm'
@@ -13,14 +14,16 @@ class App extends Component {
   render(){
     return (
       <div >
-        我是跟组件
-        {/* <News /> */}
-
+        <h1>我是根组件</h1>
+        <News />
+        <hr />
         <FormRef />
-        <hr></hr>
-        {/* <TodoList /> */}
-
+        <hr />
+        <Vmode />
+        <hr />
         <ReactForm />
+        <hr />
+        <TodoList />
       </div>
     )
   }

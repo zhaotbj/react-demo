@@ -65,8 +65,8 @@ class ReactForm extends Component {
         <h1>react-Form表单</h1>
         <form onSubmit={this.handleSubmit}>
           用户名：<input type="text" value={this.state.name} onChange={this.handelName} /> <br />
-          性别： <input type="radio" value="1" checked={this.state.sex == 1} onChange={this.handelSex} />男
-          <input type="radio" value="2" checked={this.state.sex == 2} onChange={this.handelSex} />女
+          性别： <input type="radio" value="1" checked={this.state.sex === '1'} onChange={this.handelSex} />男
+          <input type="radio" value="2" checked={this.state.sex === '2'} onChange={this.handelSex} />女
           居住城市: <select value={this.state.city} onChange={this.handleCity}>
             {
               this.state.citys.map(function (item, index) {
