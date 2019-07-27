@@ -16,6 +16,7 @@ import Parent from './components/Parent' // 测试父子组件通信
 
 import Lifecycle from './components/Lifecycle' // 测试生命周期
 
+import Router from './components/Router'
 
 class App extends Component {
 
@@ -35,6 +36,7 @@ class App extends Component {
             <Link to="/TodoList">TodoList组件</Link>
             <Link to="/Parent">React组件通信的几种方式</Link>
             <Link to="/Lifecycle">React组件生命周期</Link>
+            <Link to="/router">React-router</Link>
 
           </header>
 
@@ -46,6 +48,7 @@ class App extends Component {
           <Route path="/TodoList" component={TodoList} />
           <Route path="/Parent" component={Parent} />
           <Route path="/Lifecycle" component={Lifecycle} />
+          <Route path="/Router" component={Lifecycle} />
           
        
         </div>
